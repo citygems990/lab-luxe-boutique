@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { Plus } from "lucide-react";
 import { motion } from "framer-motion";
 import { formatPrice, type Product } from "@/data/products";
 import { useCart } from "@/lib/cart";
@@ -7,27 +6,72 @@ import { useCart } from "@/lib/cart";
 export function ProductCard({ product }: { product: Product }) {
   const { add } = useCart();
   return (
-    <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5 }}
-      className="group flex flex-col">
-      <Link to="/product/$id" params={{ id: product.id }} className="relative aspect-square overflow-hidden rounded-sm bg-muted">
-        <img src={product.image} alt={product.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-        <span className="absolute left-3 top-3 rounded-full bg-background/90 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-foreground">{product.cert}</span>
+    <motion.article
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5 }}
+      className="group flex flex-col border border-border/60 bg-card transition-all duration-500 hover:border-foreground/30 shadow-soft hover:shadow-luxe"
+    >
+      <Link
+        to="/product/$id"
+        params={{ id: product.id }}
+        className="relative block aspect-square overflow-hidden bg-muted"
+      >
+        <img
+          src={product.image}
+          alt={`Выращенный бриллиант ${product.cutRu} ${product.carat} карат`}
+          width={800}
+          height={800}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+        />
+        <span className="absolute left-3 top-3 bg-background/90 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-foreground">
+          {product.cert}
+        </span>
       </Link>
-      <div className="mt-4 flex items-start justify-between gap-3">
-        <div>
-          <Link to="/product/$id" params={{ id: product.id }} className="font-serif text-lg leading-tight hover:text-gold">{product.name}</Link>
-          <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
-            {product.cut} · {product.carat}ct · {product.color} · {product.clarity}
-          </p>
+
+      <div className="p-5 md:p-6">
+        <div className="flex items-baseline justify-between gap-3">
+          <Link to="/product/$id" params={{ id: product.id }} className="font-serif text-xl md:text-2xl hover:text-gold transition-colors">
+            {product.cutRu}
+          </Link>
+          <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+            {product.id.toUpperCase()}
+          </span>
         </div>
-        <div className="text-right">
-          <div className="font-serif text-lg">{formatPrice(product.price)}</div>
+
+        <dl className="mt-4 grid grid-cols-4 gap-2 border-y border-border/60 py-3 text-center">
+          <div>
+            <dt className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Карат</dt>
+            <dd className="mt-0.5 font-serif text-lg">{product.carat.toFixed(2)}</dd>
+          </div>
+          <div>
+            <dt className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Цвет</dt>
+            <dd className="mt-0.5 font-serif text-lg">{product.color}</dd>
+          </div>
+          <div>
+            <dt className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Чистота</dt>
+            <dd className="mt-0.5 font-serif text-lg">{product.clarity}</dd>
+          </div>
+          <div>
+            <dt className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Огранка</dt>
+            <dd className="mt-0.5 font-serif text-sm leading-tight">
+              {product.cutGrade === "Excellent" ? "Ex" : product.cutGrade === "Very Good" ? "VG" : "G"}
+            </dd>
+          </div>
+        </dl>
+
+        <div className="mt-5 flex items-center justify-between gap-3">
+          <span className="font-serif text-2xl">{formatPrice(product.price)}</span>
+          <button
+            onClick={() => add(product.id)}
+            className="text-xs uppercase tracking-[0.18em] border-b border-foreground/40 pb-0.5 transition-colors hover:border-gold hover:text-gold"
+          >
+            В корзину
+          </button>
         </div>
       </div>
-      <button onClick={() => add(product.id)}
-        className="mt-4 inline-flex items-center justify-center gap-2 rounded-sm border border-foreground/15 py-3 text-xs font-medium uppercase tracking-[0.15em] transition-colors hover:bg-graphite hover:text-primary-foreground">
-        <Plus className="h-4 w-4" strokeWidth={1.5} /> В корзину
-      </button>
-    </motion.div>
+    </motion.article>
   );
 }

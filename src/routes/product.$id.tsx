@@ -38,7 +38,7 @@ function ProductPage() {
   };
 
   const specs = [
-    { k: "Огранка (Cut)", v: product.cut },
+    { k: "Огранка (Cut)", v: `${product.cutRu} · ${product.cutGrade}` },
     { k: "Вес (Carat)", v: `${product.carat} ct` },
     { k: "Цвет (Color)", v: product.color },
     { k: "Чистота (Clarity)", v: product.clarity },
