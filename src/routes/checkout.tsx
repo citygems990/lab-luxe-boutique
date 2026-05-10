@@ -88,7 +88,7 @@ function Checkout() {
                     <div>
                       <Link to="/product/$id" params={{ id: product.id }} className="font-serif text-lg leading-tight">{product.name}</Link>
                       <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
-                        {product.cut} · {product.carat}ct · {product.color} · {product.clarity}
+                        {product.cutRu} · {product.carat}ct · {product.color} · {product.clarity}
                       </p>
                     </div>
                     <div className="font-serif text-lg">{formatPrice(product.price * qty)}</div>
