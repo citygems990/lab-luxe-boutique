@@ -50,9 +50,9 @@ function Index() {
             alt="Выращенный бриллиант"
             width={1920}
             height={935}
-            className="h-full w-full object-cover opacity-70"
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/60 to-graphite/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-graphite/85 via-graphite/40 to-graphite/10" />
         </div>
 
         <div className="container-luxe relative py-24 md:py-36 lg:py-44">
@@ -128,12 +128,12 @@ function Index() {
                 <Link
                   to="/catalog"
                   search={{ cut: c }}
-                  className="flex aspect-square flex-col items-center justify-center gap-2 border border-border bg-background p-3 text-center transition-all hover:-translate-y-1 hover:border-gold hover:shadow-soft"
+                  className="flex aspect-square flex-col items-center justify-center gap-2 p-3 text-center transition-all hover:-translate-y-1 hover:text-gold"
                 >
                   <img
                     src={CUT_ICON[c]}
                     alt={CUT_RU[c]}
-                    className="h-12 w-12 object-contain"
+                    className="h-12 w-12 object-contain mix-blend-multiply"
                     loading="lazy"
                   />
                   <span className="font-serif text-base">{CUT_RU[c]}</span>
