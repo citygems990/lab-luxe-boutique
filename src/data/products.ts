@@ -68,7 +68,7 @@ export const cuts: Cut[] = [
 export const colors: Color[] = ["D","E","F","G","H","I"];
 export const clarities: Clarity[] = ["FL","IF","VVS1","VVS2","VS1","VS2","SI1"];
 const grades: Product["cutGrade"][] = ["Excellent","Very Good","Good"];
-const certs: Product["cert"][] = ["IGI","GIA"];
+const certs: Product["cert"][] = ["IGI"];
 
 function rng(seed: number) {
   return () => {

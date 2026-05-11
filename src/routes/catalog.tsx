@@ -26,7 +26,7 @@ export const Route = createFileRoute("/catalog")({
   validateSearch: (s) => search.parse(s),
   head: () => ({
     meta: [
-      { title: "Каталог выращенных бриллиантов — LUMEN" },
+      { title: "Каталог выращенных бриллиантов — CITY GEMS" },
       { name: "description", content: "Каталог сертифицированных lab-grown бриллиантов с фильтрами по огранке, весу, цвету, чистоте и цене." },
     ],
   }),

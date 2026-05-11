@@ -47,10 +47,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LUMEN — лабораторные бриллианты с сертификатами IGI/GIA" },
+      { title: "CITY GEMS — лабораторные бриллианты с сертификатами IGI" },
       { name: "description", content: "Этичные лабораторные бриллианты премиум-класса. Каталог камней с подробными характеристиками 4C и сертификацией." },
-      { property: "og:title", content: "LUMEN — лабораторные бриллианты" },
-      { property: "og:description", content: "Этичные lab-grown бриллианты с сертификацией IGI/GIA." },
+      { property: "og:title", content: "CITY GEMS — лабораторные бриллианты" },
+      { property: "og:description", content: "Этичные lab-grown бриллианты с сертификацией IGI." },
       { property: "og:type", content: "website" },
     ],
     links: [

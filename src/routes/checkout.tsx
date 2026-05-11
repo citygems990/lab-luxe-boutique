@@ -8,7 +8,7 @@ import { formatPrice } from "@/data/products";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Оформление заказа — LUMEN" },
+      { title: "Оформление заказа — CITY GEMS" },
       { name: "description", content: "Оставьте заявку — менеджер свяжется с вами для уточнения деталей заказа." },
     ],
   }),
