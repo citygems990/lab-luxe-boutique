@@ -61,11 +61,11 @@ function Index() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="mb-6 text-xs md:text-sm uppercase tracking-[0.3em] text-gold">
+            <p className="mb-6 text-xs md:text-sm uppercase tracking-[0.3em] text-graphite">
               Lab-Grown · Сертификат IGI
             </p>
-            <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-8xl max-w-3xl">
-              Совершенство, <em className="not-italic text-gold">выращенное</em> человеком
+            <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-8xl max-w-3xl text-white">
+              Совершенство, <em className="not-italic">выращенное</em> человеком
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/75 md:text-lg">
               Каталог выращенных бриллиантов CITY GEMS — каждый камень идентичен природному
