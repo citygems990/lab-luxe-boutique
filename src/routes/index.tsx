@@ -2,15 +2,37 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ShieldCheck, Sparkles, Leaf, ArrowRight } from "lucide-react";
 import heroDiamond from "@/assets/hero-diamond.jpg";
-import { products, cuts, CUT_RU } from "@/data/products";
+import { products, cuts, CUT_RU, type Cut } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
+
+import roundIcon from "@/assets/cuts/round.png";
+import ovalIcon from "@/assets/cuts/oval.png";
+import emeraldIcon from "@/assets/cuts/emerald.png";
+import princessIcon from "@/assets/cuts/princess.png";
+import pearIcon from "@/assets/cuts/pear.png";
+import cushionIcon from "@/assets/cuts/cushion.png";
+import radiantIcon from "@/assets/cuts/radiant.png";
+import heartIcon from "@/assets/cuts/heart.png";
+import marquiseIcon from "@/assets/cuts/marquise.png";
+
+const CUT_ICON: Record<Cut, string> = {
+  Round: roundIcon,
+  Oval: ovalIcon,
+  Emerald: emeraldIcon,
+  Princess: princessIcon,
+  Pear: pearIcon,
+  Cushion: cushionIcon,
+  Radiant: radiantIcon,
+  Heart: heartIcon,
+  Marquise: marquiseIcon,
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LUMEN — выращенные бриллианты премиум-класса" },
-      { name: "description", content: "Сертифицированные lab-grown бриллианты. Этичность, идентичность природным камням и до 70% выгоднее." },
+      { title: "CITY GEMS — выращенные бриллианты премиум-класса" },
+      { name: "description", content: "Сертифицированные lab-grown бриллианты. Этичность, идентичность природным камням и до 99% выгоднее." },
       { property: "og:image", content: heroDiamond },
     ],
   }),
@@ -27,10 +49,10 @@ function Index() {
             src={heroDiamond}
             alt="Выращенный бриллиант"
             width={1920}
-            height={1080}
-            className="h-full w-full object-cover opacity-60"
+            height={935}
+            className="h-full w-full object-cover opacity-70"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/60 to-graphite/30" />
         </div>
 
         <div className="container-luxe relative py-24 md:py-36 lg:py-44">
@@ -40,13 +62,13 @@ function Index() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="mb-6 text-xs md:text-sm uppercase tracking-[0.3em] text-gold">
-              Lab-Grown · Сертификат IGI / GIA
+              Lab-Grown · Сертификат IGI
             </p>
             <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-8xl max-w-3xl">
               Совершенство, <em className="not-italic text-gold">выращенное</em> человеком
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/75 md:text-lg">
-              Каталог выращенных бриллиантов LUMEN — каждый камень идентичен природному
+              Каталог выращенных бриллиантов CITY GEMS — каждый камень идентичен природному
               по химии, оптике и сиянию. Этичный выбор без компромиссов.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
@@ -76,7 +98,7 @@ function Index() {
           {[
             { Icon: Leaf, title: "Этичное происхождение", text: "Без шахт и конфликтных зон. Полная прозрачность цепочки поставок." },
             { Icon: Sparkles, title: "Идентичны природным", text: "Та же химия, твёрдость и блеск. Отличить может только лабораторный анализ." },
-            { Icon: ShieldCheck, title: "До 70% выгоднее", text: "Лучшее соотношение цены и характеристик 4C при той же красоте камня." },
+            { Icon: ShieldCheck, title: "До 99% выгоднее", text: "Лучшее соотношение цены и характеристик 4C при той же красоте камня." },
           ].map(({ Icon, title, text }, i) => (
             <Reveal key={title} delay={i * 0.08}>
               <div className="flex h-full flex-col gap-4 bg-background p-8 md:p-10">
@@ -106,10 +128,15 @@ function Index() {
                 <Link
                   to="/catalog"
                   search={{ cut: c }}
-                  className="flex aspect-square flex-col items-center justify-center border border-border bg-background p-3 text-center transition-all hover:-translate-y-1 hover:border-gold hover:shadow-soft"
+                  className="flex aspect-square flex-col items-center justify-center gap-2 border border-border bg-background p-3 text-center transition-all hover:-translate-y-1 hover:border-gold hover:shadow-soft"
                 >
-                  <CutIcon name={c} />
-                  <span className="mt-2 font-serif text-base">{CUT_RU[c]}</span>
+                  <img
+                    src={CUT_ICON[c]}
+                    alt={CUT_RU[c]}
+                    className="h-12 w-12 object-contain"
+                    loading="lazy"
+                  />
+                  <span className="font-serif text-base">{CUT_RU[c]}</span>
                 </Link>
               </Reveal>
             ))}
@@ -132,24 +159,5 @@ function Index() {
         </div>
       </section>
     </>
-  );
-}
-
-function CutIcon({ name }: { name: string }) {
-  const shapes: Record<string, React.ReactNode> = {
-    Round: <circle cx="20" cy="20" r="14" />,
-    Princess: <rect x="6" y="6" width="28" height="28" />,
-    Emerald: <rect x="9" y="4" width="22" height="32" rx="2" />,
-    Oval: <ellipse cx="20" cy="20" rx="11" ry="15" />,
-    Cushion: <rect x="6" y="6" width="28" height="28" rx="6" />,
-    Pear: <path d="M20 4 C 30 14, 32 24, 20 36 C 8 24, 10 14, 20 4 Z" />,
-    Radiant: <path d="M12 4 H28 L36 12 V28 L28 36 H12 L4 28 V12 Z" />,
-    Heart: <path d="M20 34 C 6 24, 4 12, 12 8 C 16 6, 20 10, 20 14 C 20 10, 24 6, 28 8 C 36 12, 34 24, 20 34 Z" />,
-    Marquise: <path d="M20 4 C 30 14, 30 26, 20 36 C 10 26, 10 14, 20 4 Z" />,
-  };
-  return (
-    <svg viewBox="0 0 40 40" className="h-9 w-9 stroke-foreground" fill="none" strokeWidth="1.25">
-      {shapes[name]}
-    </svg>
   );
 }
