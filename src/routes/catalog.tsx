@@ -81,7 +81,7 @@ function Catalog() {
         <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gold">Каталог</p>
         <h1 className="font-serif text-4xl leading-tight md:text-5xl">Выращенные бриллианты</h1>
         <p className="mt-4 text-muted-foreground">
-          {filtered.length} камней в наличии. Все с лабораторными сертификатами и лазерной маркировкой.
+          {filtered.length} камней в наличии.
         </p>
       </div>
 
