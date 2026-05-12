@@ -64,10 +64,10 @@ function Index() {
             <p className="mb-6 text-xs md:text-sm uppercase tracking-[0.3em] text-graphite">
               Lab-Grown · Сертификат IGI
             </p>
-            <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-8xl max-w-3xl text-white">
+            <h1 className="text-5xl leading-[1.05] md:text-7xl lg:text-8xl max-w-3xl text-white" style={{ fontFamily: '"Courier New", Courier, monospace' }}>
               Совершенство, <em className="not-italic">выращенное</em> человеком
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/75 md:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/75 md:text-lg" style={{ fontFamily: '"Courier New", Courier, monospace' }}>
               Каталог выращенных бриллиантов CITY GEMS — каждый камень идентичен природному
               по химии, оптике и сиянию. Этичный выбор без компромиссов.
             </p>
