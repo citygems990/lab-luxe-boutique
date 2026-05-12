@@ -26,7 +26,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="container-luxe flex h-16 items-center justify-between md:h-20">
         <Link to="/" className="flex items-center gap-2 text-foreground">
-          <DiamondOutline className="h-5 w-5 text-foreground" />
+          <DiamondOutline className="h-6 w-6 text-foreground" />
           <span className="font-serif text-xl tracking-wide md:text-2xl text-foreground"><span className="tracking-wider">CITY</span><span className="italic font-normal">gems</span></span>
         </Link>
         <nav className="hidden items-center gap-10 text-sm md:flex">
