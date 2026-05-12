@@ -19,7 +19,7 @@ export function Header() {
       <div className="container-luxe flex h-16 items-center justify-between md:h-20">
         <Link to="/" className="flex items-center gap-2 text-foreground">
           <Gem className="h-5 w-5 text-gold" strokeWidth={1.5} />
-          <span className="font-serif text-xl tracking-wide md:text-2xl">CITY GEMS<span className="text-gold">.</span></span>
+          <span className="font-serif text-xl tracking-wide md:text-2xl"><span className="tracking-wider">CITY</span><span className="italic font-normal">gems</span></span>
         </Link>
         <nav className="hidden items-center gap-10 text-sm md:flex">
           {links.map(l => (
