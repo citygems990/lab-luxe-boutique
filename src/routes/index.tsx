@@ -43,19 +43,18 @@ function Index() {
   const popular = products.slice(0, 6);
   return (
     <>
-      <section className="relative overflow-hidden bg-graphite text-primary-foreground">
+      <section className="relative overflow-hidden bg-background text-foreground">
         <div className="absolute inset-0">
           <img
             src={heroDiamond}
             alt="Выращенный бриллиант"
             width={1920}
-            height={935}
+            height={655}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-graphite/85 via-graphite/40 to-graphite/10" />
         </div>
 
-        <div className="container-luxe relative py-24 md:py-36 lg:py-44">
+        <div className="container-luxe relative py-16 md:py-24 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,10 +63,10 @@ function Index() {
             <p className="mb-6 text-xs md:text-sm uppercase tracking-[0.3em] text-graphite">
               Lab-Grown · Сертификат IGI
             </p>
-            <h1 className="text-5xl leading-[1.05] md:text-7xl lg:text-8xl max-w-3xl text-white" style={{ fontFamily: '"Courier New", Courier, monospace' }}>
+            <h1 className="text-2xl leading-[1.05] md:text-4xl lg:text-5xl max-w-3xl text-white" style={{ fontFamily: '"Courier New", Courier, monospace' }}>
               Совершенство, <em className="not-italic">выращенное</em> человеком
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/75 md:text-lg" style={{ fontFamily: '"Courier New", Courier, monospace' }}>
+            <p className="mt-6 max-w-xl text-base leading-relaxed md:text-lg" style={{ fontFamily: '"Courier New", Courier, monospace', color: 'oklch(0.32 0.008 270)' }}>
               Каталог выращенных бриллиантов CITY GEMS — каждый камень идентичен природному
               по химии, оптике и сиянию. Этичный выбор без компромиссов.
             </p>
