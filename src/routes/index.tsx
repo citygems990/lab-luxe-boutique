@@ -52,6 +52,7 @@ function Index() {
             height={655}
             className="h-full w-full object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent" />
         </div>
 
         <div className="container-luxe relative py-16 md:py-24 lg:py-32">
@@ -60,13 +61,13 @@ function Index() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="mb-6 text-xs md:text-sm uppercase tracking-[0.3em] text-graphite">
+            <p className="mb-6 text-xs md:text-sm uppercase tracking-[0.3em] text-white/85" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.55)' }}>
               Lab-Grown · Сертификат IGI
             </p>
-            <h1 className="text-2xl leading-[1.05] md:text-4xl lg:text-5xl max-w-3xl text-white" style={{ fontFamily: '"Courier New", Courier, monospace' }}>
+            <h1 className="text-2xl leading-[1.05] md:text-4xl lg:text-5xl max-w-3xl text-white" style={{ fontFamily: '"Courier New", Courier, monospace', textShadow: '0 2px 14px rgba(0,0,0,0.6)' }}>
               Совершенство, <em className="not-italic">выращенное</em> человеком
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed md:text-lg" style={{ fontFamily: '"Courier New", Courier, monospace', color: 'oklch(0.32 0.008 270)' }}>
+            <p className="mt-6 max-w-xl text-base leading-relaxed md:text-lg text-white/95" style={{ fontFamily: '"Courier New", Courier, monospace', textShadow: '0 1px 10px rgba(0,0,0,0.6)' }}>
               Каталог выращенных бриллиантов CITY GEMS — каждый камень идентичен природному
               по химии, оптике и сиянию. Этичный выбор без компромиссов.
             </p>
