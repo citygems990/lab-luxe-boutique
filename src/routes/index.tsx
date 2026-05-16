@@ -109,12 +109,7 @@ function Index() {
                   search={{ cut: c }}
                   className="flex aspect-square flex-col items-center justify-center gap-2 p-3 text-center transition-all hover:-translate-y-1 hover:text-gold"
                 >
-                  <img
-                    src={CUT_ICON[c]}
-                    alt={CUT_RU[c]}
-                    className="h-12 w-12 object-contain mix-blend-multiply"
-                    loading="lazy"
-                  />
+                  <CutIcon cut={c} className="h-12 w-12 text-foreground/80" />
                   <span className="font-serif text-base">{CUT_RU[c]}</span>
                 </Link>
               </Reveal>
