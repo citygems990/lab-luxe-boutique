@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # Строку cache удалили, ошибка Lock file is not found исчезнет!
       - name: Install dependencies
         run: npm install
       - name: Build
@@ -24,7 +24,8 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          # Меняем dist на путь, куда TanStack Start обычно собирает статику
+          path: .output/public 
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
