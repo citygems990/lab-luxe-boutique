@@ -12,20 +12,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # Строку cache удалили, ошибка Lock file is not found исчезнет!
+
       - name: Install dependencies
         run: npm install
+
       - name: Build
         run: npm run build
+
+      # Этот шаг временно покажет, какие папки создались, если сборка опять пойдет не так
+      - name: Check build output directory
+        run: ls -la
+
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # Меняем dist на путь, куда TanStack Start обычно собирает статику
-          path: .output/public 
+          path: dist # Возвращаем стандартную папку dist
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
