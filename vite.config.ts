@@ -14,6 +14,6 @@ export default defineConfig({
   },
   vite: {
     // Добавляем базовый путь для корректного деплоя на GitHub Pages
-    base: '/lab-luxe-boutique/', 
+    base: '/имя_вашего_репозитория/', 
   }
 });
