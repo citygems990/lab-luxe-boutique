@@ -12,8 +12,4 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
-  vite: {
-    // Добавляем базовый путь для корректного деплоя на GitHub Pages
-    base: '/имя_вашего_репозитория/', 
-  }
 });
