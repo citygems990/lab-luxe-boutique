@@ -90,6 +90,45 @@ function Index() {
         </div>
       </section>
 
+      <section className="container-luxe py-20 md:py-28">
+        <div className="grid gap-12 md:grid-cols-[1fr_1fr] md:items-center">
+          <Reveal className="max-w-3xl">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-gold">О компании</span>
+            <h2 className="mt-3 font-serif text-4xl md:text-5xl">City Gems — ваш проводник в мире лабораторных бриллиантов</h2>
+            <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground md:text-base">
+              <p>
+                Много лет мы специализируемся на продаже сертифицированных лабораторных бриллиантов,
+                предлагая камни, которые идентичны природным по химии, оптике и сиянию.
+              </p>
+              <p>
+                City Gems — это надёжный поставщик с внимательным подходом к каждому запросу.
+                Мы помогаем подобрать идеальный камень под ваш бюджет, вкус и задачу:
+                будь это помолвочное кольцо, инвестиция или уникальное украшение.
+              </p>
+              <p>
+                Каждый бриллиант в каталоге сопровождается паспортом IGI и полной
+                прозрачностью характеристик — вы получаете точно то, что видите.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                { number: "10+", label: "лет на рынке" },
+                { number: "500+", label: "камней в ассортименте" },
+                { number: "IGI", label: "международная сертификация" },
+                { number: "100%", label: "внимание к клиенту" },
+              ].map(({ number, label }) => (
+                <div key={label} className="flex flex-col gap-1 bg-muted/40 p-6">
+                  <span className="font-serif text-3xl text-gold">{number}</span>
+                  <span className="text-xs uppercase tracking-[0.15em] text-muted-foreground">{label}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="bg-muted/40 py-20 md:py-28">
         <div className="container-luxe">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
